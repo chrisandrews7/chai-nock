@@ -62,9 +62,9 @@ describe('requestedWithHeaders() assertions', () => {
           .reply(200);
         request(requestObj);
 
-        const assertion = expect(requestNock).to.have.been.requestedWithHeaders(
-          { test: 2 },
-        );
+        const assertion = expect(
+          requestNock,
+        ).to.have.been.requestedWithHeaders({ test: 2 });
         const actualHeaders = '{ Object (test, host, ...) }'; // Chai truncates the object to this string
 
         return assertion
@@ -84,9 +84,9 @@ describe('requestedWithHeaders() assertions', () => {
           .get('/')
           .reply(200);
 
-        const assertion = expect(requestNock).to.have.been.requestedWithHeaders(
-          { test: 123 },
-        );
+        const assertion = expect(
+          requestNock,
+        ).to.have.been.requestedWithHeaders({ test: 123 });
 
         return assertion
           .then(() => done.fail('Should have thrown an error'))
