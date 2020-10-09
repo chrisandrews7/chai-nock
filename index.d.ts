@@ -1,5 +1,3 @@
-import * as nock from 'nock';
-
 declare global {
 
   export namespace Chai {
