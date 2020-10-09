@@ -7,22 +7,10 @@ declare global {
     }
 
     interface Assertion {
-      /**
-       * true if the spy was called at least once.
-       */
       requested: Assertion;
-      /**
-       * @param count The number of recorded calls.
-       */
       requestedWith(body: any): Assertion;
-      /**
-       * true if the spy was called exactly once.
-       */
-      requestedWithHeaders(headers: object): Assertion;
-      /**
-       * true if the spy was called exactly twice.
-       */
-      requestedWithHeadersMatch(headers: object): Assertion;
+      requestedWithHeaders(headers: object): Promise<Assertion>;
+      requestedWithHeadersMatch(headers: object): Promise<Assertion>;
     }
   }
 }
