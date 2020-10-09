@@ -7,8 +7,8 @@ declare global {
     }
 
     interface Assertion {
-      requested: Assertion;
-      requestedWith(body: any): Assertion;
+      requested: Promise<Assertion>;
+      requestedWith(body: any): Promise<Assertion>;
       requestedWithHeaders(headers: object): Promise<Assertion>;
       requestedWithHeadersMatch(headers: object): Promise<Assertion>;
     }
